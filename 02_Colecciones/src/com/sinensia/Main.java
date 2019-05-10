@@ -1,5 +1,6 @@
 package com.sinensia;
 
+import com.sinensia.poo_avanzada.ProbandoAnimales;
 import com.sinensia.pruebas.Fechas;
 import com.sinensia.pruebas.Colecciones;
 import static com.sinensia.pruebas.Herencia.probandoHerencia;
@@ -7,10 +8,12 @@ import static com.sinensia.pruebas.Herencia.probandoHerencia;
 public class Main {
 
     public static void main(String[] args) {
-        Colecciones.ejemploHashMap();
+       /* Colecciones.ejemploHashMap();
         Colecciones.ejemploListas();
         Fechas.probar();
-        probandoHerencia();
+        probandoHerencia();*/
+       
+       ProbandoAnimales.ProbrarClasesAbstractas();
         
     }
 }
