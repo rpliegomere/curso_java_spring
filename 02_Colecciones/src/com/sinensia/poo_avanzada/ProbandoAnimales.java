@@ -10,36 +10,48 @@ package com.sinensia.poo_avanzada;
  * @author Admin
  */
 public class ProbandoAnimales {
-    
-    public static void ProbrarClasesAbstractas(){
-    
-    Tucan unTucan = new Tucan("Turigualca", 15.8F);
-        System.out.println(unTucan.nombre+":");
+
+    public static void ProbrarClasesAbstractas() {
+
+        Tucan unTucan = new Tucan("Turigualca", 15.8F);
+
+        TortugaNinja donatello = new TortugaNinja("Donatello", 177.3F);
+
+        Hippie hippie = new Hippie("Hipster", 170.5F);
+
+        GatoVolador supergato = new GatoVolador("Super Cat", 63F);
+
+        System.out.println(unTucan.nombre + ":");
         unTucan.comer();
         unTucan.volar();
         unTucan.cazar("conejos");
-    unTucan.mover();
-        System.out.println("Que mama: " + );
-       System.out.println("");
-    TortugaNinja donatello = new TortugaNinja("Donatello", 177.3F);
-        System.out.println(donatello.nombre + ":");
-        donatello.comer();
-    donatello.mover();
-    donatello.volar();
+        unTucan.mover();
+        System.out.println("Que mama: " + unTucan.mamar(hippie));
         System.out.println("");
-    Hippie hippie = new Hippie("Hipster", 170.5F);
+
         System.out.println(hippie.nombre + ":");
-    hippie.comer();
-    hippie.mover();
-    hippie.volar();
-        System.out.println("Que mama: " unTucan.mamar(hippie));
-    GatoVolador supergato = new GatoVolador("Super Cat", 63F);
+        hippie.comer();
+        hippie.mover();
+        hippie.volar();
+        System.out.println("Que mama: " + hippie.mamar(unTucan));
+        System.out.println("");
+
         System.out.println(supergato.nombre + ":");
         supergato.comer();
         supergato.mover();
         supergato.volar();
         supergato.saludarAlPropietario();
-    
-}
-    
+        System.out.println("");
+
+        System.out.println(donatello.nombre + ":");
+        donatello.comer();
+        donatello.mover();
+        try {
+            donatello.volar();
+        } catch (UnsupportedOperationException | UnsupportedClassVersionError error) {
+            System.err.println(error.getMessage());
+
+        }
+    }
+
 }

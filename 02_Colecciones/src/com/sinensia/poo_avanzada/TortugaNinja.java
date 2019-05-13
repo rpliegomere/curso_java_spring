@@ -18,12 +18,15 @@ public class TortugaNinja extends Mascota{
     @Override
     public void mover() {
         System.out.println("Salto mortal triple con pirueta");
+    
     }
 
     @Override
-    public void volar(){
-        System.out.println("Puede volar con jetpack");
+    public void volar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+ 
 
     @Override
     public void comer() {
