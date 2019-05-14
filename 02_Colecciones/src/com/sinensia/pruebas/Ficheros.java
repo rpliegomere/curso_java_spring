@@ -33,12 +33,12 @@ public class Ficheros {
         FileWriter fichero = null;
         try {
             fichero = new FileWriter("fichero_texto.txt");
-            for (int i = 0; i < 4; i++) {
+            //for (int i = 0; i < 4; i++) {
 
                 for (String linea : lineaTexto) {
                     fichero.write(linea + "\r\n");
                 }
-            }
+           // }
 
         } catch (Exception ex) {
             System.err.println("Mensaje error: " + ex.getMessage());
@@ -91,13 +91,13 @@ public class Ficheros {
     }
 
     public static String lecturaFich() {
-        File fichFormWin = new File("C:\\Users\\Admin\\Desktop\\Curso_java\\GitHub German\\curso_java_spring\\02_Colecciones\\fichero_texto.txt");
+        File fichFormWin = new File("C:\\Users\\Admin\\Desktop\\Curso_java\\curso_java_spring.git\\04_LecturaClientes\\Ejercicio ficheros.txt");
         // File fichFormJava = new File("C:/Users/Admin/Desktop/Curso_java/GitHub German/curso_java_spring/02_Colecciones/fichero_texto.txt");
         //File fichFormRelativa = new File("fichero_texto.txt");
 
         Scanner escanear = null;
         try {
-            System.out.println("Leyendo fich");
+            System.out.println("Ejercicio ficheros");
             escanear = new Scanner(fichFormWin);
             while (escanear.hasNextLine()) {
                 String linea = escanear.nextLine();
@@ -105,10 +105,10 @@ public class Ficheros {
 
                 /* if (linea.compareTo("Linea Tercera") <0);
                 else if (linea.compareTo("Linea Tercera") >0);
-                else System.out.println(linea);*/
+                else System.out.println(linea);
                 if (linea.compareTo("Linea Segunda") == 0) {
                     System.out.println(linea);
-                }
+                }*/
 
             }
 
