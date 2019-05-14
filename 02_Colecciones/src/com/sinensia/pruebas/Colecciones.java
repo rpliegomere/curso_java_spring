@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.sinensia.pruebas;
 
 import com.sinensia.Cliente;
@@ -38,17 +43,12 @@ public class Colecciones {
             System.out.println("Cliente " + parClaveValor.getKey());
             Cliente cliente = parClaveValor.getValue();
             System.out.println("  Nombre: " + cliente.getNombre());
-<<<<<<< HEAD
         }        
         
-=======
-        }
->>>>>>> 7c55dc11ac120a54c6a5d79a41fb6dbded101b8e
         diccClientes.put("d4", new Cliente(7, "Fulano", "ff@ff.com"));
         Map<Date, Cliente> mapClientesFecha = new TreeMap<Date, Cliente>();
         mapClientesFecha.put(new Date(82, 4, 9), luis);
         mapClientesFecha.put(new Date(81, 4, 9), new Cliente(7, "Fulano", "ff@ff.com"));
-<<<<<<< HEAD
         mapClientesFecha.put(new Date(82, 9, 19), new Cliente(8, "Mengano", "mm@ff.com"));
         mapClientesFecha.put(new Date(117, 7, 10), diccClientes.get("c3"));
         
@@ -63,17 +63,6 @@ public class Colecciones {
         
         
         
-=======
-        mapClientesFecha.put(new Date(117, 9, 19), new Cliente(8, "Mengano", "mm@ff.com"));
-        mapClientesFecha.put(new Date(80, 7, 10), diccClientes.get("c3"));
-        
-        System.out.println("\n\n****** Mapa ordenado fecha *******");
-        for (Map.Entry<Date, Cliente> entrada : mapClientesFecha.entrySet())
-        {
-            System.out.println("\n - Clave: " + entrada.getKey().toString());
-            System.out.println("   Valor: " + entrada.getValue().toString());
-        }
->>>>>>> 7c55dc11ac120a54c6a5d79a41fb6dbded101b8e
     }
     public static void ejemploListas() {        
         ArrayList<Cliente> listaClientes;

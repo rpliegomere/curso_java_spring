@@ -3,15 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-<<<<<<< HEAD
-=======
-
->>>>>>> 7c55dc11ac120a54c6a5d79a41fb6dbded101b8e
 package com.sinensia.dao;
 
 import com.sinensia.Cliente;
 import com.sinensia.ClienteInvitado;
-<<<<<<< HEAD
 import java.util.List;
 
 /**
@@ -35,20 +30,4 @@ public class ProbandoDAO {
         
     }
     
-=======
-
-/**
- *
- * @author Admin - German
- */
-public class ProbandoDAO {
-    public static void probarCliente() {
-        ClienteDAO repoCli = new ClienteDAO();
-        repoCli.poner(new Cliente(1, "Ana", "aaa@a"));
-        repoCli.poner(new ClienteInvitado(2, "Juan", "jjj@a"));
-        repoCli.poner(new ClienteInvitado(3, "Bea", "bbb@a"));
-        System.out.println("Juan: " + repoCli.leerUno(2).toString());
-        System.out.println("Repo: " + repoCli.toString());
-    }
->>>>>>> 7c55dc11ac120a54c6a5d79a41fb6dbded101b8e
 }

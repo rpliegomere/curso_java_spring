@@ -56,7 +56,6 @@ public class Cliente {
 
     @Override
     public String toString() {
-<<<<<<< HEAD
         //return super.toString(); //To change body of generated methods, choose Tools | Templates.
         
         return "Cliente [" + id + ", " + nombre + ", " + email + "]";
@@ -64,17 +63,4 @@ public class Cliente {
     
     
     
-=======
-        // return super.toString(); //To change body of generated methods, choose Tools | Templates.
-        return "Cliente [" + id + ", " + nombre + ", " + email + "]";
-    }    
->>>>>>> 7c55dc11ac120a54c6a5d79a41fb6dbded101b8e
 }
-
-
-
-
-
-
-
-

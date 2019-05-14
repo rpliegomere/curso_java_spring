@@ -1,10 +1,6 @@
 package com.sinensia;
 
-<<<<<<< HEAD
 import com.sinensia.dao.ProbandoDAO;
-=======
-import static com.sinensia.dao.ProbandoDAO.probarCliente;
->>>>>>> 7c55dc11ac120a54c6a5d79a41fb6dbded101b8e
 import com.sinensia.genericos.ProbandoGenericos;
 import com.sinensia.poo_avanzando.ProbandoAnimales;
 import com.sinensia.pruebas.Fechas;
@@ -20,7 +16,6 @@ public class Main {
         Polimorfismo.poliformHashMap();*/
         //Colecciones.ejemploListas();
         //Colecciones.ejemploSet();
-<<<<<<< HEAD
         //Colecciones.ejemploHashMap();
         /*Colecciones.ejemploListas();
         Fechas.probar();
@@ -28,16 +23,5 @@ public class Main {
        // ProbandoAnimales.probarClasesAbstractas();
        //ProbandoGenericos.probarMetodo();
         ProbandoDAO.probarCliente();
-=======
-        
-        // Colecciones.ejemploHashMap();
-        // ProbandoGenericos.probarMetodo();
-        probarCliente() ;
-        /*
-        Colecciones.ejemploListas();
-        Fechas.probar();
-        probandoHerencia();*/
-        //ProbandoAnimales.probarClasesAbstractas();
->>>>>>> 7c55dc11ac120a54c6a5d79a41fb6dbded101b8e
     }
 }
