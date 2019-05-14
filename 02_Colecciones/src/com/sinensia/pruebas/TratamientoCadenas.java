@@ -24,6 +24,14 @@ public class TratamientoCadenas {
             System.out.println("Contiene manCHa - version en minusculas");
         else
             System.out.println("No contiene manCHa");
+        
+        String strCsv = "German,    6332554  , C/Aqui mismo ,    Profesor";
+    for (String dato : strCsv.split(",")){
+        System.out.println("   Dato: " + dato.trim());
     }
+        
+    }
+    
+    
     
 }
