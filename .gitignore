@@ -25,3 +25,5 @@ hs_err_pid*
 build
 build
 /04_LecturaClientes/nbproject/private/
+/05_web/nbproject/private/
+/05_WebHTML_JS/dist/
