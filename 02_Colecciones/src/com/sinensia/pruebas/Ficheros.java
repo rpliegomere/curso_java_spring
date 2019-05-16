@@ -20,110 +20,113 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Admin
+ * @author Admin - German
  */
 public class Ficheros {
 
-    public static void ProbarEscritura() throws IOException {
-        String[] lineaTexto = {
-            "Linea Primera",
-            "Linea Segunda",
-            "Linea Tercera"};
+    public static void probarEscritura() throws IOException {
+        String[] lineasTexto = {
+            escaner};
 
         FileWriter fichero = null;
         try {
-            fichero = new FileWriter("fichero_texto.txt");
-            //for (int i = 0; i < 4; i++) {
-
-                for (String linea : lineaTexto) {
+            fichero = new FileWriter("fichero_texto.txt", true);
+            for (int i = 0; i < 100000; i++) {
+                for (String linea : lineasTexto) {
                     fichero.write(linea + "\r\n");
                 }
-           // }
-
+            }
+            fichero.write("FIN DEL FICHERRO" + "\r\n");
+            // fichero.close();
         } catch (Exception ex) {
             System.err.println("Mensaje error: " + ex.getMessage());
         } finally {
+            //try {
             fichero.close();
-            System.out.println("Fichero Cerrado");
+            System.out.println("Fichero cerrado");
+            /*} catch (IOException ex) {
+                Logger.getLogger(Ficheros.class.getName()).log(Level.SEVERE, null, ex);
+            }*/
         }
     }
 
     public static void escrituraStream() {
 
-        String[] lineaTexto = {
-            "Linea Primera",
-            "Linea Segunda",
-            "Linea Tercera"};
-
+        String[] lineasTexto = {
+            "Linea primera",
+            "Linea segunda",
+            "Tercera línea"};
         Writer out = null;
         try {
             FileOutputStream streamFich;
             streamFich = new FileOutputStream("fich_2.txt");
             OutputStreamWriter streamWriter;
             streamWriter = new OutputStreamWriter(streamFich, "UTF-8");
-            out = new BufferedWriter(streamWriter);
-
-            for (int i = 0; i < 4; i++) {
-
-                for (String linea : lineaTexto) {
-                    try {
-
-                        out.write(linea + "\r\n");
-                    } catch (IOException ex) {
-                        System.err.println("Error al escribir fich: " + ex.getMessage());
-                    }
+            out = new BufferedWriter(streamWriter, 10);
+            out = new BufferedWriter(
+                    new OutputStreamWriter(
+                            new FileOutputStream("fich_2.txt"),
+                            "UTF-8"));
+            for (String linea : lineasTexto) {
+                try {
+                    out.write(linea + "\r\n");
+                } catch (IOException ex) {
+                    System.err.println("Error al escribir fich: " + ex.getMessage());
                 }
             }
-
-        } catch (UnsupportedEncodingException | FileNotFoundException ex2) {
-
-            System.err.println("Error 2: " + ex2.getMessage());
+        } catch (UnsupportedEncodingException
+                | FileNotFoundException ex2) {
+            System.err.println("ERror 2: "
+                    + ex2.getMessage());
         } finally {
             try {
                 out.close();
-                System.out.println("Fichero Cerrado");
+                System.out.println("Fichero cerrado");
             } catch (IOException ex3) {
-                System.err.println("Error en cierre fich: " + ex3.getMessage());
+                System.err.println("Error en cierre fich:  " + ex3.getMessage());
             }
-
         }
-
     }
 
-    public static String lecturaFich() {
+    public static void lecturaFich() {
         File fichFormWin = new File("C:\\Users\\Admin\\Desktop\\Curso_java\\curso_java_spring.git\\04_LecturaClientes\\Ejercicio ficheros.txt");
-        // File fichFormJava = new File("C:/Users/Admin/Desktop/Curso_java/GitHub German/curso_java_spring/02_Colecciones/fichero_texto.txt");
-        //File fichFormRelativa = new File("fichero_texto.txt");
-
-        Scanner escanear = null;
+        //File fichFormJava = new File("C:/Users/Admin/Desktop/curso_java_spring.git/02_Colecciones/fichero_texto.txt");
+        //File fichRutaRelativa = new File("fich_2.txt");
+        Scanner escaner = null;
         try {
-            System.out.println("Ejercicio ficheros");
-            escanear = new Scanner(fichFormWin);
-            while (escanear.hasNextLine()) {
-                String linea = escanear.nextLine();
-                System.out.println(">>>>> \"" + linea + "\"");
-
-                /* if (linea.compareTo("Linea Tercera") <0);
-                else if (linea.compareTo("Linea Tercera") >0);
-                else System.out.println(linea);
-                if (linea.compareTo("Linea Segunda") == 0) {
+           // System.out.println("Leyendo fich");
+            escaner = new Scanner(fichFormWin);
+            while (escaner.hasNextLine()) { // Hasta el siguiente \n
+                String linea = escaner.nextLine();
+                //System.out.println(">>>> \"" + linea + "\"");
+               /* if (linea.compareTo("Linea segunda") < 0)   
+                    System.out.println("      es menor" );
+                else if (linea.compareTo("Linea segunda") > 0)
+                    System.out.println("      es mayor" );
+                else System.out.println("      son iguales" );*/
+               for(int i=0; i<100; i++){
+               if(linea.startsWith(String.valueOf(i)))
                     System.out.println(linea);
-                }*/
-
+              
+               }
+              /*  String datos[] = linea.split(",");
+        for (String dato : datos) {
+            System.out.println("  Dato: " + dato);
+        }*/
+               
             }
-
+            
+            
         } catch (Exception ex) {
-            System.out.println("Mensaje: " + ex.getMessage());
+            System.err.println("Mensaje: " + ex.getMessage());
         } finally {
             try {
-                if (escanear != null);
-                escanear.close();
-            } catch (Exception ex) {
-                System.err.println("Mensaje al cerrar: " + ex.getMessage());
+                if (escaner != null) {
+                    escaner.close();
+                }
+            } catch (Exception ex2) {
+                System.err.println("Mensaje al cerrar: " + ex2.getMessage());
             }
         }
-        return null;
-
     }
-
 }
