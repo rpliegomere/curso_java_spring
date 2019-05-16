@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Otros campo FORM</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Otros campos FORM</h1>
+        <form action="#" method="post" enctype="text/plain">
+            <input type="button" value="Boton JS" onclick="alert('Hola que pasa')"/>
+            <input type="button" value="Boton JS externo" onclick="mostrarMensaje('Hola de nuevo!')"/>
+            <br/><label for="fichero">Fichero:</label>
+            <input type="file" id="fichero" name="fichero"/>
+            <br/><label for="fecha">Fecha:</label>
+            <input type="datetime" id="fecha" name="fecha"/>
+            <br/><label for="password">Password:</label>
+            <input type="password" id="password" name="password"/>
+            <br/><label for="password-encriptado">Campo no visible</label>
+            <input type="hidden" id="password-encriptado" name="passwor-encriptado" value="KJhkj3434"/>
+            
+            <br/>Otros campos<br/>
+            <br/><label for="url">URL:</label>
+            <input type="url" id="direccion-serv" name="direccion-serv">
+            <input type="button" value="Entrar" onclick=""/>
+            <br/><label for="rango">Rango:</label>
+            <input type="range" name="rango" id="rango" min="-50" max="50"/>
+            <br/><label for="telefono">Telefono:</label>
+            <input type="tel" name="telefono" id="telefono"/>
+            <br/><label for="busqueda">Busqueda</label>
+            <input type="search" name="busqueda" id="busqueda"/>
+            <br/><input type="submit" name="Subir" id="subir"/>
+            
+            <br/>Otros campos especiales<br/>
+            <input type="checkbox" checked="checked"/> O checado o no
+            <br/>Opciones:
+                <input type="radio" id="tipoCliente" name="tipoCliente" value="Cliente normal"/>Cliente normal
+                <input type="radio" id="tipoClienteInv" name="tipoCliente" value="Cliente invitado"/>Cliente invitado
+                <input type="radio" id="tipoClienteVIP" name="tipoCliente" value="Cliente VIP"/>Cliente VIP
+                
+            <br/>
+            Frecuencia de viajes:
+            <select id="frecuencia" name="frecuencia" multiple="">
+                <option value="1">Varias veces al día</option>
+                <option value="2">Una vez al día</option>
+                <option value="3">Varias veces a la semana</option>
+                <option value="4">Varias veces al mes</option>
+            </select>
+            <br/>Comentarios o mensajes:<br/>
+            <textarea id="comentarios" cols="30" rows="6" name="comentarios" placeholder="Tu cuenta, que se te ignorara."></textarea>
+
+        </form>
+        <table border="2">
+            <caption>Lista de vainas</caption>
+            <tr>   <!--Corresponde a columna-->
+                <td>Algo1</td><!--Corresponde a fila-->
+                <td>Algo2</td>
+                <td>Algo3</td>
+            </tr>
+            <tr>   <!--Corresponde a columna-->
+                <td>Algo4</td><!--Corresponde a fila-->
+                <td>Algo5</td>
+                <td>Algo6</td>
+            </tr>
+            <tr>   <!--Corresponde a columna-->
+                <td>Algo7</td><!--Corresponde a fila-->
+                <td>Algo8</td>
+                <td>Algo9</td>
+            </tr>
+        </table>
+        <img alt="No hay imagen" src="imagenes/flat,550x550,075,f.u2.jpg"
+             style="width: 40%">
+        <script src="js/04_mascampos.js"></script>
+    </body>
+</html>
