@@ -12,9 +12,31 @@ and open the template in the editor.
     </head>
     <body>
         <h1>Tabla Generada</h1>
+        
+        
         <table border="2">
+            <label for="tipo">Tipo:</label>
+            <input type="text" name="tipo3" id="tipo3" size="30" maxlength="40" placeholder="Introduzca Tipo de Producto"/>
+            <br/>
+            <br/><label for="nombre">Nombre:</label> 
+            <input type="text" name="nombre2" id="nombre2" size="30" maxlength="40" placeholder="Introduzca Nombre de Producto"/>
+            <br/>
+            <br/><label for="precio">Precio:</label>
+            <input type="number" name="precio" id="precio" size="30" min="0" placeholder="Introduzca Precio de Producto"/>
+            <br/>
+            <br/><label for="stock">Stock</label>
+            <input type="number" name="stock" id="stock" size="30" min="0" placeholder="Introduzca Stock de Producto"/>
+            <br/>
+            <br/><input type="button" value="Generar" onclick="generarTabla()" size="30" maxlength="255"/>
+            <input type="button" value="Generar V2" onclick="generarTablaV2()" size="30" maxlength="255"/>
+            
+            <br/><input type="reset" value="Borrar formulario"/>
            
         </table>
-        <script src="js/05_tabla_js.js"></script>
+            
+        <script src="js/05_tabla_js.js">
+         
+           
+        </script>
     </body>
 </html>
