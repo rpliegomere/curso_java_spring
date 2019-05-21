@@ -2,12 +2,11 @@
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee">
     <display-name>Primer servlet</display-name>
     <servlet>
-        <servlet-name>RegistroServlet</servlet-name>
+        <servlet-name>ServletRegistro</servlet-name>
         <servlet-class>com.sinensia.RegistroServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>RegistroServlet</servlet-name>
+        <servlet-name>ServletRegistro</servlet-name>
         <url-pattern>/registro</url-pattern>
     </servlet-mapping>
-
 </web-app>

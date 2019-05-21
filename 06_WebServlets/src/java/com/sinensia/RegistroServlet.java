@@ -20,7 +20,8 @@ import javax.servlet.http.HttpServletResponse;
 public class RegistroServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest peticion, HttpServletResponse respuesta)
+    protected void doGet(HttpServletRequest peticion,
+            HttpServletResponse respuesta)
             throws ServletException, IOException {
         respuesta.setContentType("text/html;charset=UTF-8");
         try (PrintWriter salida = respuesta.getWriter()) {
@@ -28,34 +29,40 @@ public class RegistroServlet extends HttpServlet {
             salida.println("<title>Web servlet desde Java</title>");
             salida.println("</head><body>");
             salida.println("<h1>Respuesta al registro</h1>");
-            salida.println("<h2>Ruta del servlet: " + peticion.getContextPath() + peticion.getMethod() + "</h2>");
+            salida.println("<h2>Ruta del servlet: "
+                    + peticion.getContextPath() + ", metodo: "
+                    + peticion.getMethod() + "</h2>");
             salida.println("<ul>");
             for (int i = 0; i < 3; i++) {
-                salida.println("<li> " + i + "</li>");
+                salida.println("<li>Num " + i + "</li>");
             }
             salida.println("</ul>");
+            
             String nombre = peticion.getParameter("nombre");
             String strEdad = peticion.getParameter("edad");
             int edad = Integer.parseInt(strEdad);
             String email = peticion.getParameter("email");
-            String activo = peticion.getParameter("activo");
-
-            salida.println("<p>Nombre = " + nombre + "</p>");
-            salida.println("<p>Edad = " + edad + "</p>");
-            salida.println("<p>Email = " + email + "</p>");
-            salida.println("<p>Activo = " + activo + "</p>");
+            String strActivo = peticion.getParameter("activo");
+            boolean activo = false;
+            if (strActivo != null)  
+                activo = true;
+            // boolean activo = strActivo != null;
+            
+            salida.println("<p>nombre = " + nombre + "</p>");
+            salida.println("<p>edad = " + edad+ "</p>");
+            salida.println("<p>email = " + email+ "</p>");
+            salida.println("<p>activo = " + activo+ "</p>");
             
             MySQLCliente bdCliente = new MySQLCliente();
-            if (bdCliente.crear(nombre, email, "PASSWORD", edad, activo)){
-                salida.println("<p>Guardado Correctamente</p>");
-            }else {
-                
+            if (bdCliente.crear(nombre, email, "Passwd1234", edad, activo)) {                
+                salida.println("<p>Guardado correctamente</p>");
+            } else {
+                salida.println("<p>Guardado ERRONEAMENTE</p>");
             }
             
             salida.println("</body></html>");
-            
-            
-
+            salida.println("");
+            salida.println("");
         }
     }
 

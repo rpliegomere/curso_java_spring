@@ -31,17 +31,21 @@ public class MySQLCliente {
         }
     }
     
-    public boolean crear(String nombre, String email, String password, int edad, boolean activo){
-        try (Connection conex = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_ventas?user=admin&password=Admin1234&useSSL=false&serverTimezone=UTC", "admin", "Admin1234")){
-            
-            String sqlQUERY = 
-                    "INSERT INTO cliente (nombre, email, password, edad, activo)"  + " VALUES ( '" + nombre + "' , '" + email + "' , '" + password + "' , " + edad + " , " + (activo ? "1" + : "0") + ")";
+    public boolean crear(String nombre, String email,
+            String passwd, int edad, boolean activo) {
+        try (Connection conex = DriverManager.getConnection(
+                "jdbc:mysql://localhost:3306/bd_ventas?user=admin&password=Admin1234&useSSL=false&serverTimezone=UTC",
+                "admin", "Admin1234")) {
+            String sqlQuery = 
+                    "INSERT INTO cliente (nombre, email, password, edad, activo) "
+                    + " VALUES ( '" + nombre + "' , '" + email + "' , '" + passwd
+                    + "' , " + edad + " , " + (activo ? "1" : "0") + " ) ";
             Statement sentencia = conex.createStatement();
-            sentencia.execute(sqlQUERY);
+            sentencia.executeUpdate(sqlQuery);
             return true;
-            
-        }catch (SQLException ex) {
-            Logger.getLogger(MySQLCliente.class.getName()).log(Level.SEVERE, "Error SQL", ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(MySQLCliente.class.getName())
+                    .log(Level.SEVERE, "Error SQL", ex);
             return false;
         }
     }
