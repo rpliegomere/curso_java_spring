@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package com.sinensia.modelo;
 
 import java.io.Serializable;
@@ -21,7 +22,7 @@ import javax.persistence.Table;
 
 /**
  *
- * @author Admin
+ * @author Admin - German
  */
 @Entity
 @Table(name = "producto")
@@ -46,7 +47,6 @@ public class Producto implements Serializable {
     private long precio;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "productoId")
     private List<Compra> compraList;
-
     public Producto() {
     }
 
@@ -125,5 +125,4 @@ public class Producto implements Serializable {
     public String toString() {
         return "com.sinensia.modelo.Producto[ id=" + id + " ]";
     }
-    
 }

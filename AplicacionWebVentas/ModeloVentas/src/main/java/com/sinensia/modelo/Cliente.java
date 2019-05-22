@@ -3,15 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package com.sinensia.modelo;
 
 import java.io.Serializable;
 import java.util.List;
-
-/**
- *
- * @author Admin
- */
 
 public class Cliente extends Entidad implements Serializable {
 
@@ -22,13 +18,13 @@ public class Cliente extends Entidad implements Serializable {
     private String email;
     
     private short edad;
-   
+    
     private short activo;
-   
+    
     private String password;
     
     private List<Compra> compraList;
-
+    
     public Cliente() {
     }
 
@@ -44,7 +40,6 @@ public class Cliente extends Entidad implements Serializable {
         this.activo = activo;
         this.password = password;
     }
-
     public String getNombre() {
         return nombre;
     }
@@ -115,7 +110,11 @@ public class Cliente extends Entidad implements Serializable {
 
     @Override
     public String toString() {
-        return "Cliente[ id=" + id + ", " + nombre + ", " + email + ", " + password + ", " + edad + ", " + activo + "]";
+        return "Cliente[ id=" + id + ", "
+                + nombre + ", "
+                + email + ", "
+                + password + ", "
+                + edad + ", "
+                + activo + "]";
     }
-    
 }

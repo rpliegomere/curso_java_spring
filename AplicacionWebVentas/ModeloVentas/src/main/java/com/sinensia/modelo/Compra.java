@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package com.sinensia.modelo;
 
 import java.io.Serializable;
@@ -23,7 +24,7 @@ import javax.persistence.TemporalType;
 
 /**
  *
- * @author Admin
+ * @author Admin - German
  */
 @Entity
 @Table(name = "compra")
@@ -50,7 +51,6 @@ public class Compra implements Serializable {
     @JoinColumn(name = "producto_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private Producto productoId;
-
     public Compra() {
     }
 
@@ -128,5 +128,4 @@ public class Compra implements Serializable {
     public String toString() {
         return "com.sinensia.modelo.Compra[ id=" + id + " ]";
     }
-    
 }
