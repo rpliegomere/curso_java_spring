@@ -6,7 +6,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class ClienteDAOTest {    
+/*public class ClienteDAOTest {    
     private static ClienteDAO daoCli;
     
     @BeforeClass
@@ -29,4 +29,4 @@ public class ClienteDAOTest {
               (short) 20, (short) 1, "Pru123"));  
         assertEquals("pru@pru", daoCli.obtenerUno(1).getEmail());              
     }
-}
+}*/

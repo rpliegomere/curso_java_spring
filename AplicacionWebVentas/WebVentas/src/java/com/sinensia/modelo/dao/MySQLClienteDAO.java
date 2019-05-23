@@ -27,7 +27,7 @@ public class MySQLClienteDAO implements InterfazDAO<Cliente> {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             DriverManager.registerDriver(
-                    new com.mysql.cj.jdbc.Driver());
+                    new com.mysql.jdbc.Driver());
         } catch (SQLException ex) {
             Logger.getLogger(MySQLClienteDAO.class.getName()).log(Level.SEVERE, "Error SQL", ex);
         } catch (ClassNotFoundException ex) {

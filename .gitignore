@@ -31,3 +31,6 @@ build
 /06_WebServlets/dist/
 /AplicacionWebVentas/ModeloVentas/nbproject/
 /AplicacionWebVentas/ModeloVentas/target/
+/AplicacionWebVentas/WebVentas/target/
+/AplicacionWebVentas/WebVentas/nbproject/private/
+/AplicacionWebVentas/WebVentas/dist/

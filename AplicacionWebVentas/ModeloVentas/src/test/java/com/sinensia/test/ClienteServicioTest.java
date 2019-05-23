@@ -27,13 +27,13 @@ public class ClienteServicioTest {
     }
     @Test
     public void clienteOk_1() {
-        // assert = afirmar/asegurar
-        assertNotNull(servCli.insertar("Ok", "email@ok.com", "ok12", "30", "on"));
-        assertEquals( servCli.obtenerUno("email@ok.com").getNombre(), "Ok");
-        servCli.eliminar("email@ok.com");
-        assertNull(servCli.obtenerUno("email@ok.com"));
+        //assert = afirmar/asegurar
+        //assertNotNull(servCli.insertar("Ok332", "email525@ok.com", "ok3122", "30", "on"));
+        assertEquals(servCli.obtenerUno(32), servCli.obtenerUno("email5@ok.com"));
+        /*servCli.eliminar("email5@ok.com");
+        assertNull(servCli.obtenerUno("email@ok.com"));*/
     }
-    @Test
+   /* @Test
     public void clienteOk_2() {
         servCli.insertar("Cliente Ok", "email_1@ok.com", "ok12", "30", "on");
         servCli.insertar("Cliente Ok", "email_2@ok.com", "ok12", "25", "on");
@@ -91,5 +91,5 @@ public class ClienteServicioTest {
         servCli.eliminar("mar4@ok.com");
         assertNull(servCli.obtenerUno("mod2@mod.com"));
         assertNull(servCli.obtenerUno("mar2@ok.com"));
-    }
+    }*/
 }
