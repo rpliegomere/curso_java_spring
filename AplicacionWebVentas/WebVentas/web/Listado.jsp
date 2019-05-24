@@ -25,20 +25,13 @@ List<Cliente> clientes = srvCli.obtenerTodos();
             <thead>
                 <tr>
                     <th>Nombre</th>
-                    <th>Nombre</th>
                     <th>Email</th>
-                    <th>Edad</th>
-                    <th>Activo</th>
-                    <th>Password</th>
                 </tr>
             </thead>
-            <tr>
-       
-            
-            <tr>
-                <td><%out.print(clientes);%></td>
-                
-            </tr>
+           <% for (Cliente cli : clientes){
+             out.println("<tr><td>"+ cli.getNombre()+ "</td>");
+                     out.println("<td>"+ cli.getEmail()+ "</td></tr>");
+           } %>
          
         </table><br>
         
