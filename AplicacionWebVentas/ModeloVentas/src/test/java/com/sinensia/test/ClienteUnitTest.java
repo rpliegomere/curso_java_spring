@@ -42,7 +42,7 @@ public class ClienteUnitTest {
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
-   /* @Test
+    @Test
     public void probarJUnit() {
         assertEquals(10, 10);
         assertEquals("Texto", "Texto");
@@ -60,5 +60,5 @@ public class ClienteUnitTest {
         assertEquals("2", daoCli.obtenerTodos().size());   
         Cliente  cli = daoCli.obtenerUno(2);
         assertTrue(cli.getEmail().equals("pru2@pru"));        
-    }*/
+    }
 }

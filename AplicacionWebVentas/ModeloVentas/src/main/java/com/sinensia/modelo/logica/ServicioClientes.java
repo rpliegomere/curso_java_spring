@@ -1,17 +1,14 @@
 package com.sinensia.modelo.logica;
 
 import com.sinensia.modelo.Cliente;
-//import com.sinensia.modelo.dao.ClienteDAO;
+// import com.sinensia.modelo.dao.ClienteDAO;
 import com.sinensia.modelo.dao.MySQLClienteDAO;
 
 public class ServicioClientes {
 
-   // private ClienteDAO dao;
-    
     private MySQLClienteDAO dao;
 
     public ServicioClientes() {
-     //   dao = new ClienteDAO();
         dao = new MySQLClienteDAO();
     }
 
@@ -24,11 +21,7 @@ public class ServicioClientes {
             
             Cliente nuevoCli = new Cliente(null, nombre, email, iEdad, iActivo, passwd);
             nuevoCli = dao.insertar(nuevoCli);
-   
             return nuevoCli;
-            
-           
-            
         } else {
             return null;
         }
@@ -39,13 +32,14 @@ public class ServicioClientes {
     }
 
     public Cliente obtenerUno(String email) {
+        return dao.obtenerUno(email);
         //TODO: Implementar en el DAO
-        for (Cliente c : dao.obtenerTodos()) {
+        /*for (Cliente c : dao.obtenerTodos()) {
             if (c.getEmail().equals(email)) {
                 return c;
             }
         }
-        return null;
+        return null;*/
     }
 
     public void eliminar(int id) {
@@ -58,15 +52,13 @@ public class ServicioClientes {
         eliminar(id);
     }
 
-    public Cliente modificar(Integer id, String nombre, String email,
+    public Cliente modificar(int id, String nombre, String email,
             String passwd, String edad, String activo)
             //throws Exception
     {
         Cliente cli = null;
-        
         if (validar(nombre, email, passwd, edad, activo)) {
-            
-            cli = new Cliente(id , nombre, email, 
+            cli = new Cliente(id, nombre, email, 
                     Short.parseShort(edad), 
                     (short)("on".equals(activo) ? 1 : 0), passwd);
             cli = dao.modificar(cli);
@@ -79,10 +71,8 @@ public class ServicioClientes {
         if (nombre == null || nombre.equals("")) {
             return false;
         }
-        if (email == null || email.equals("")) {
-            return false;
-        }
-         if (passwd == null || passwd.equals("")) {
+        if (email == null || email.equals("")
+                || passwd == null || passwd.equals("")) {
             return false;
         }
         short iEdad = 0;

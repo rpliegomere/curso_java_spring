@@ -6,13 +6,11 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Web ventas</title>
+        <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h1>Web ventas</h1>
-        <a href="registro.jsp">Nuevo cliente</a>
-        <a href="Listado.jsp">Listado clientes</a>
+        <div>Error al registrar</div>
     </body>
 </html>

@@ -5,14 +5,14 @@
  */
 package com.sinensia.controladores;
 
-import com.sinensia.modelo.logica.ServicioClientes;
+import com.sinensia.modelo.Cliente;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import com.sinensia.modelo.logica.*;
 
 /**
  *
@@ -72,6 +72,7 @@ public class ControladorClientes extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         String nombre = request.getParameter("nombre");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
@@ -80,8 +81,14 @@ public class ControladorClientes extends HttpServlet {
         
         ServicioClientes servCli;
         servCli = new ServicioClientes();
-        servCli.insertar(nombre, email, password, edad, activo);
-        
+        Cliente cli = servCli.insertar(nombre, email, password, edad, activo);
+        if (cli == null) {
+            request.getRequestDispatcher("error_registro.jsp")
+                    .forward(request, response);
+        } else {
+            request.getRequestDispatcher("registro_ok.jsp")
+                    .forward(request, response);
+        }
     }
 
     /**
