@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.sinensia.modelo.logica.*;
 import java.util.ArrayList;
 import java.util.List;
+import javax.servlet.http.Cookie;
 
 /**
  *
@@ -22,23 +23,8 @@ import java.util.List;
  */
 public class ControladorClientes extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-   protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-     
-    }
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
+ /*   // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+ */   /**
      * Handles the HTTP <code>GET</code> method.
      *
      * @param request servlet request
@@ -46,24 +32,32 @@ public class ControladorClientes extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest request,
+            HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
         
-        String nombre = request.getParameter("nombre");
+        String nombre = request.getParameter("nombre");        
         nombre = nombre != null ? nombre : "";
+        
+        Cookie galleta = new Cookie("nombre_busqueda", nombre);
+        galleta.setMaxAge(10000);
+        response.addCookie(galleta);
+                
         ServicioClientes srvCli = new ServicioClientes();
         List<Cliente> listado = srvCli.obtenerTodos();
         List<Cliente> listaPorNombre = new ArrayList<>();
-        
-        for (Cliente cliente : listado){
-            if (cliente.getNombre().contains(nombre)){
+        for (Cliente cliente : listado) {
+            if (cliente.getNombre().toLowerCase()
+                    .contains(nombre.toLowerCase())) {
+                
                 listaPorNombre.add(cliente);
             }
         }
         request.getSession().setAttribute("listaPorNombre", listaPorNombre);
-        request.getRequestDispatcher("listado_jstl.jsp").forward(request, response);
+        request.getRequestDispatcher("listado_jstl.jsp")
+                .forward(request, response);
     }
 
     /**

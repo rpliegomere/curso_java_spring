@@ -88,8 +88,7 @@ public class ServicioClientes {
         //TODO: Faltan ciertas validaciones
         return true;
     }
-    
-    public List<Cliente> obtenerTodos(){
+    public List<Cliente> obtenerTodos() {
         return dao.obtenerTodos();
     }
 }
