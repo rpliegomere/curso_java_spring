@@ -23,8 +23,7 @@ import javax.servlet.http.Cookie;
  */
 public class ControladorClientes extends HttpServlet {
 
- /*   // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
- */   /**
+   /**
      * Handles the HTTP <code>GET</code> method.
      *
      * @param request servlet request
@@ -38,7 +37,7 @@ public class ControladorClientes extends HttpServlet {
             HttpServletResponse response)
             throws ServletException, IOException {
         
-        String nombre = request.getParameter("nombre");        
+        String nombre = request.getParameter("nombre_busq");        
         nombre = nombre != null ? nombre : "";
         
         Cookie galleta = new Cookie("nombre_busqueda", nombre);

@@ -33,7 +33,10 @@
 <%-- Manera rollo servlet cutre --%>
 <% for (Cliente cli : clientes) {
         out.println("<tr><td>" + cli.getNombre() + "</td>");
-        out.println("<td>" + cli.getEmail() + "</td></tr>");
+        out.println("<td>" + cli.getEmail() + "</td>");%>
+        <td><input type="button" id="btn_borrar" value="Borrar"></td>
+        <td><a href="js/eliminar.js" onclick="javascript:removeElement(); return false;">Borrar</a></td></tr>
+         <%
     } %>
     
 <%-- Manera rollo JSP medio cutre --%>

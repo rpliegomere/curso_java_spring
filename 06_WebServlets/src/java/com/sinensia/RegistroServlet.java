@@ -5,13 +5,16 @@
  */
 package com.sinensia;
 
+import com.google.gson.Gson;
 import com.sinensia.modelo.MySQLCliente;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 
 /**
  *
@@ -19,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class RegistroServlet extends HttpServlet {
 
-    @Override
+   @Override
     protected void doGet(HttpServletRequest peticion,
             HttpServletResponse respuesta)
             throws ServletException, IOException {
@@ -64,6 +67,31 @@ public class RegistroServlet extends HttpServlet {
             salida.println("");
             salida.println("");
         }
+    }
+    
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
+        response.setContentType("application/json;charset=UTF-8");
+        ServletOutputStream out = response.getOutputStream();
+        
+        Gson gson = new Gson();
+        gson.toJson(request);
+        
+        String nombre = request.getParameter("nombre");
+        String email = request.getParameter("email");
+        String password = request.getParameter("password_encrip");
+        String edad = request.getParameter("edad");
+        String activo = request.getParameter("activo");
+        
+        System.out.println(">>>>" + nombre);
+        
+        try (PrintWriter salida = response.getWriter()) {
+            out.println(nombre);
+            
+        }
+        
     }
 
     @Override
