@@ -29,11 +29,11 @@ public class ClientesControladorREST extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPut(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         response.setContentType("application/json;charset=UTF-8");
-
+        
         try (PrintWriter salida = response.getWriter()) {
             String nombre = request.getParameter("nombre");
             String email = request.getParameter("email");
@@ -52,10 +52,6 @@ public class ClientesControladorREST extends HttpServlet {
                     jsonCli += "   \"id\" : \"" + cli.getId() + "\"";
                     jsonCli += " , \"nombre\" : \"" + cli.getNombre() + "\"";
                     jsonCli += " , \"email\" : \"" + cli.getEmail()+ "\"";
-                    jsonCli += " , \"edad\" : \"" + cli.getEdad()+ "\"";
-                    jsonCli += " , \"password\" : \"" + cli.getPassword()+ "\"";
-                    jsonCli += " , \"activo\" : \"" + cli.getActivo()+ "\"";
-                    
                 }
             }
             jsonCli += "}";
